@@ -88,7 +88,7 @@ export default function Home() {
   };
 
   const handleClick = (event) => {
-    console.log("event");
+    
     hiddenFileInput.current.click();
   };
 
