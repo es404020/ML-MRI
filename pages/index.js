@@ -26,7 +26,7 @@ export default function Home() {
       setLoading(false);
     } catch (err) {
       setLoading(false);
-      setError("error");
+      setError("Sorry unable to fetch model.");
     }
   };
 
@@ -93,14 +93,14 @@ export default function Home() {
   };
 
   return (
-    <>
+    <main
+    className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+  >
       {error ? (
          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>{ error }</p>
       ) : !loading ? (
         <>
-          <main
-            className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-          >
+       
             <input
               type="file"
               ref={hiddenFileInput}
@@ -218,7 +218,7 @@ export default function Home() {
                 </p>
               </a>
             </div>
-          </main>
+         
         </>
       ) : (
         <>
@@ -231,6 +231,6 @@ export default function Home() {
           </main>
         </>
       )}
-    </>
+     </main>
   );
 }
